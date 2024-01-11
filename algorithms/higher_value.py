@@ -2,10 +2,10 @@ def higher_value(list):
     if len(list) == 0:
         return 0
     else:
-        maior = list[0]
-        if list[1:] > maior:
-            maior = higher_value(list)
-    return maior
+        higher = list[0]
+        if list[1:] > higher:
+            higher = higher_value(list)
+    return higher
 
-lista = [5, 3, 9]
-print(higher_value(lista))
+list_a = [5, 3, 9]
+print(higher_value(list_a))

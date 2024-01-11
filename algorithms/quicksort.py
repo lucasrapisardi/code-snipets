@@ -1,14 +1,12 @@
 def quicksort(arr):
-    if len(arr) < 2:
+    if len(arr) <= 1:
         return arr
     else:
-        pivo = arr[0]
-        menores = [ i for i in arr[1:] if i < pivo ]
-        maiores = [ i for i in arr[1:] if i > pivo ]
-        return quicksort(menores) + [pivo] + quicksort(maiores)
+        anchor = arr[0]
+        smaller = [ i for i in arr[1:] if i < anchor ]
+        higher = [ i for i in arr[1:] if i > anchor ]
+        return quicksort(smaller) + [anchor] + quicksort(higher)
     
 
 print(quicksort([10, 5, 2, 1, -4, -2, 900, 50/2, 13, 25]))
-
-flow_ids = ["a89f3f91-0004-4f6d-9dc2-774f9e3c0afb",
-"44d7db82-f054-4358-82ed-e21742d686d6"]
+print(quicksort([]))
